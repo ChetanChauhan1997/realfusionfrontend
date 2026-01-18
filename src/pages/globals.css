@@ -1,0 +1,184 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+/* Font */
+   --font-montserrat: 'Montserrat', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+
+
+  --background: #F7F7F7;          /* Warm White - clean and approachable */
+  --foreground: #2F4F6F;          /* Slate Blue - main text and primary foreground */
+  --card: #F7F7F7;                /* warm white background for cards */
+  --card-foreground: #2F4F6F;
+
+  --popover: #F7F7F7;
+  --popover-foreground: #2F4F6F;
+
+  --primary: #2F4F6F;             /* Slate Blue - primary brand color */
+  --primary-foreground: #F7F7F7;  /* text on primary buttons (white) */
+
+  --secondary: #17BEBB;           /* Aqua Teal - secondary accent */
+  --secondary-foreground: #F7F7F7;
+
+  --muted: #D9E5E7;               /* lighter aqua teal for muted bg */
+  --muted-foreground: #2F4F6F;
+
+  --accent: #17BEBB;              /* Aqua Teal accent */
+  --accent-foreground: #F7F7F7;
+
+  --destructive: #D95030;         /* destructive red/orange (unchanged or modify as needed) */
+  --destructive-foreground: #F7F7F7;
+
+  --border: #B0C7CD;              /* soft border using muted tone */
+  --input: #B0C7CD;
+  --ring: #2F4F6F;
+
+  --chart-1: #2F4F6F;             /* Using Slate Blue for charts */
+  --chart-2: #17BEBB;             /* Aqua Teal */
+  --chart-3: #62C4BA;             /* lighter teal */
+  --chart-4: #A4DDD9;             /* pale aqua */
+  --chart-5: #F7F7F7;             /* Warm white */
+
+  --radius: 0.625rem;
+
+  --sidebar: #F7F7F7;
+  --sidebar-foreground: #2F4F6F;
+  --sidebar-primary: #2F4F6F;
+  --sidebar-primary-foreground: #F7F7F7;
+  --sidebar-accent: #17BEBB;
+  --sidebar-accent-foreground: #F7F7F7;
+  --sidebar-border: #B0C7CD;
+  --sidebar-ring: #2F4F6F;
+}
+
+.dark {
+  --background: #2F4F6F;          /* Slate Blue background in dark mode */
+  --foreground: #F7F7F7;          /* Warm White foreground text */
+  --card: #254059;                /* Darker Slate Blue for cards */
+  --card-foreground: #F7F7F7;
+
+  --popover: #254059;
+  --popover-foreground: #F7F7F7;
+
+  --primary: #17BEBB;             /* Aqua Teal primary accent in dark */
+  --primary-foreground: #2F4F6F;
+
+  --secondary: #2F4F6F;
+  --secondary-foreground: #F7F7F7;
+
+  --muted: #1D3B4F;               /* muted Slate Blue for backgrounds */
+  --muted-foreground: #A4DDD9;
+
+  --accent: #17BEBB;
+  --accent-foreground: #F7F7F7;
+
+  --destructive: #D95030;
+  --destructive-foreground: #F7F7F7;
+
+  --border: #1D3B4F;
+  --input: #1D3B4F;
+  --ring: #17BEBB;
+
+  --chart-1: #62C4BA;
+  --chart-2: #17BEBB;
+  --chart-3: #A4DDD9;
+  --chart-4: #254059;
+  --chart-5: #2F4F6F;
+
+  --sidebar: #254059;
+  --sidebar-foreground: #F7F7F7;
+  --sidebar-primary: #62C4BA;
+  --sidebar-primary-foreground: #F7F7F7;
+  --sidebar-accent: #17BEBB;
+  --sidebar-accent-foreground: #F7F7F7;
+  --sidebar-border: #1D3B4F;
+  --sidebar-ring: #17BEBB;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Default body text → Lato */
+body {
+  font-family: var(--font-lato);
+  font-weight: 500;
+}
+
+/* Headings → Montserrat SemiBold */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat);
+  /* font-weight: 600; */
+}
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-toast-progress {
+  animation: toast-progress 4s linear forwards;
+}
+
+
+
+
+
+
+
+
+
