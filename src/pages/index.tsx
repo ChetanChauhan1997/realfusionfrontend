@@ -675,8 +675,8 @@ export default function RealFusionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12  bg-[#f7f7f7]">
-        <div className="max-w-6xl mx-auto px-6 text-center bg-[#f7f7f7]">
+      <footer className="py-4 bg-[#f7f7f7]">
+        <div className="max-w-8xl px-2 mx-auto text-center bg-[#f7f7f7]">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -695,6 +695,12 @@ export default function RealFusionPage() {
 
           <div className="text-slate-400 text-sm">
             © 2025 RealFusion. All rights reserved.
+          </div>
+          <div className="text-sm">
+            Disclaimer
+          </div>
+          <div className="text-xs text-slate-400">
+            This newsletter is provided for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice. RealFusion Analytics is not a licensed financial advisor, broker, or investment firm. Any information, opinions, or recommendations expressed herein are general in nature and should not be relied upon for making investment decisions. Real estate markets, including Dubai, involve risks, and past performance is not indicative of future results. Readers are strongly encouraged to conduct their own independent research and consult with qualified financial, legal, and tax advisors before making any investment decisions. RealFusion Analytics assumes no liability for any loss or damage resulting from reliance on the information provided in this newsletter.
           </div>
         </div>
       </footer>

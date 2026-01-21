@@ -165,8 +165,8 @@ export default function QuestionnairePage() {
       {Icon && (
         <div
           className={`mr-4 p-2 rounded-lg transition-colors ${checked
-              ? "bg-blue-100 text-blue-600"
-              : "bg-slate-50 text-slate-400 group-hover:text-slate-600"
+            ? "bg-blue-100 text-blue-600"
+            : "bg-slate-50 text-slate-400 group-hover:text-slate-600"
             }`}
         >
           <Icon size={20} />
@@ -590,8 +590,8 @@ export default function QuestionnairePage() {
       </div>
 
       {/* Footer Reuse */}
-      <footer className="py-12 bg-[#f8fafc] border-t border-slate-200">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <footer className="py-2 bg-[#f8fafc] border-t border-slate-200">
+        <div className="max-w-8xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -610,6 +610,12 @@ export default function QuestionnairePage() {
 
           <div className="text-slate-400 text-sm">
             © {new Date().getFullYear()} RealFusion. All rights reserved.
+          </div>
+          <div className="text-sm">
+            Disclaimer
+          </div>
+          <div className="text-xs text-slate-400">
+            This newsletter is provided for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice. RealFusion Analytics is not a licensed financial advisor, broker, or investment firm. Any information, opinions, or recommendations expressed herein are general in nature and should not be relied upon for making investment decisions. Real estate markets, including Dubai, involve risks, and past performance is not indicative of future results. Readers are strongly encouraged to conduct their own independent research and consult with qualified financial, legal, and tax advisors before making any investment decisions. RealFusion Analytics assumes no liability for any loss or damage resulting from reliance on the information provided in this newsletter.
           </div>
         </div>
       </footer>
