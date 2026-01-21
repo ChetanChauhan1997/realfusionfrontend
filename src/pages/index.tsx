@@ -165,8 +165,9 @@ export default function RealFusionPage() {
                 src={IMAGES.APP_LOGO}
                 alt="RealFusion Logo"
                 width={95}
-                height={56}
+                height={95}
                 onClick={handleLogoClick}
+                style={{ height: "120px", width: "auto" }}
               />
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">

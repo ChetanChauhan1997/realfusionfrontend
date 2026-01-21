@@ -75,7 +75,7 @@ export default function InvestmentSelectorPage() {
                 <div className="max-w-7xl mx-auto px-6 py-4">
                     <div className="flex items-center justify-between">
                         <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-3 cursor-pointer">
-                            <Image src={IMAGES.APP_LOGO} alt="RealFusion Logo" width={95} height={56} onClick={handleLogoClick} />
+                            <Image src={IMAGES.APP_LOGO} alt="RealFusion Logo" width={95} height={56} onClick={handleLogoClick} style={{ height: "120px", width: "auto" }} />
                         </motion.div>
 
                         <div className="hidden md:flex items-center space-x-8">
