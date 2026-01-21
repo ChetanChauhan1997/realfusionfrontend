@@ -148,11 +148,10 @@ export default function QuestionnairePage() {
     <label
       className={`
                 relative flex items-center p-4 cursor-pointer rounded-xl border-2 transition-all duration-200 group
-                ${
-                  checked
-                    ? "border-blue-500 bg-blue-50/50 shadow-md transform scale-[1.02]"
-                    : "border-slate-100 bg-white hover:border-blue-200 hover:shadow-sm"
-                }
+                ${checked
+          ? "border-blue-500 bg-blue-50/50 shadow-md transform scale-[1.02]"
+          : "border-slate-100 bg-white hover:border-blue-200 hover:shadow-sm"
+        }
             `}
     >
       <input
@@ -165,20 +164,18 @@ export default function QuestionnairePage() {
       />
       {Icon && (
         <div
-          className={`mr-4 p-2 rounded-lg transition-colors ${
-            checked
+          className={`mr-4 p-2 rounded-lg transition-colors ${checked
               ? "bg-blue-100 text-blue-600"
               : "bg-slate-50 text-slate-400 group-hover:text-slate-600"
-          }`}
+            }`}
         >
           <Icon size={20} />
         </div>
       )}
       <div className="flex-grow">
         <span
-          className={`font-medium transition-colors ${
-            checked ? "text-blue-900" : "text-slate-600"
-          }`}
+          className={`font-medium transition-colors ${checked ? "text-blue-900" : "text-slate-600"
+            }`}
         >
           {label}
         </span>
@@ -451,16 +448,15 @@ export default function QuestionnairePage() {
                   Bedrooms
                 </label>
                 <div className="flex flex-wrap gap-3">
-                  {["Studio", "1", "2", "3-5", "5+"].map((num) => (
+                  {["Studio", "1", "2", "3-4", "5+"].map((num) => (
                     <label
                       key={num}
                       className={`
                                             cursor-pointer w-14 h-14 rounded-xl flex items-center justify-center font-bold border-2 transition-all
-                                            ${
-                                              formData.bedrooms.includes(num)
-                                                ? "border-blue-500 bg-blue-500 text-white shadow-lg shadow-blue-500/30 scale-105"
-                                                : "border-slate-100 bg-slate-50 text-slate-500 hover:border-blue-200 hover:bg-white"
-                                            }
+                                            ${formData.bedrooms.includes(num)
+                          ? "border-blue-500 bg-blue-500 text-white shadow-lg shadow-blue-500/30 scale-105"
+                          : "border-slate-100 bg-slate-50 text-slate-500 hover:border-blue-200 hover:bg-white"
+                        }
                                         `}
                     >
                       <input

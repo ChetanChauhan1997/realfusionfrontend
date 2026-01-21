@@ -53,10 +53,17 @@ export default function RealFusionPage() {
   // const { scrollYProgress } = useScroll()
 
   const images = [
-    IMAGES.DUBAI_NIGHT,
-    IMAGES.DUBAI_MARINA_LUXURY,
-    IMAGES.DUBAI_SKYLINE_LUXURY,
-    IMAGES.PALM_JUMEIRAH_LUXURY_VILLAS,
+    // IMAGES.DUBAI_NIGHT,
+    // IMAGES.DUBAI_MARINA_LUXURY,
+    // IMAGES.DUBAI_SKYLINE_LUXURY,
+    // IMAGES.PALM_JUMEIRAH_LUXURY_VILLAS,
+    IMAGES.PEXEL1,
+    IMAGES.PEXEL2,
+    IMAGES.PEXEL3,
+    IMAGES.PEXEL4,
+    IMAGES.PEXEL5,
+    IMAGES.PEXEL6,
+    IMAGES.PEXEL7,
   ];
 
   useEffect(() => {
@@ -329,8 +336,8 @@ export default function RealFusionPage() {
                   <motion.li
                     key={index}
                     className={`relative py-10 ${index % 2 === 0
-                        ? "text-left pr-10"
-                        : "text-right pl-10 ml-auto"
+                      ? "text-left pr-10"
+                      : "text-right pl-10 ml-auto"
                       }`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                     whileInView={{ opacity: 1, x: 0 }}

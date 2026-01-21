@@ -285,7 +285,7 @@ export default function InvestmentSelectorPage() {
                             <UserCheck size={64} className="text-[#017BFC] mb-6" strokeWidth={1} />
                             <h3 className="text-xl font-bold mb-4 text-slate-800">The human touch</h3>
                             <p className="text-slate-600 text-sm md:text-base max-w-xs">
-                                Our industry leading experts will guide you every step of the way in selecting and finalizing your purchae.
+                                Our industry leading experts will guide you every step of the way in selecting and finalizing your purchase.
                             </p>
                         </div>
                     </div>
@@ -331,7 +331,7 @@ export default function InvestmentSelectorPage() {
                                     </div>
                                     <div>
                                         <div className="text-lg font-semibold text-slate-800">Email</div>
-                                        <div className="text-slate-600">info@realfusion.ae</div>
+                                        <div className="text-slate-600">info@realfusionanalytics.com</div>
                                     </div>
                                 </div>
 
