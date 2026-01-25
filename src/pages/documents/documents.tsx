@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import { RouteConfig } from "@/utils/RouteConfig";
 import LogoutButton from "@/components/LogoutButton";
 import { Download } from "lucide-react";
+import Footer from "@/components/Footer";
 
 export default function DocumentPage() {
   const router = useRouter();
@@ -202,28 +203,7 @@ export default function DocumentPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-[#f7f7f7]">
-        <div className="max-w-6xl mx-auto px-6 text-center bg-[#f7f7f7]">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-8"
-          >
-            <div className="text-3xl font-bold bg-gradient-to-r from-[#017BFC] to-[#40D3B6] bg-clip-text text-transparent mb-4">
-              RealFusion
-            </div>
-            <p className="text-[#5E807F] max-w-2xl mx-auto">
-              Revolutionizing real estate investment in Dubai through the
-              perfect fusion of AI technology and human expertise.
-            </p>
-          </motion.div>
-          <div className="text-slate-400 text-sm">
-            © 2025 RealFusion. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer/>
 
       <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>

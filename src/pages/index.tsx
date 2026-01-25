@@ -30,6 +30,9 @@ import LogoutButton from "@/components/LogoutButton";
 import ContactUsForm from "@/components/home/contactus";
 import { RouteConfig } from "@/utils/RouteConfig";
 import { useRouter } from "next/router";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 
 export default function RealFusionPage() {
   const router = useRouter();
@@ -107,7 +110,7 @@ export default function RealFusionPage() {
   };
 
   const lines = [
-    "Data-Driven Decisions,Personalized Guidance",
+    "Data-Driven Decisions, Personalized Guidance",
     "AI Precision Meets Dubai Experts",
     "Discover Luxury & Innovation",
     "Redefining Real Estate Intelligence",
@@ -147,137 +150,17 @@ export default function RealFusionPage() {
     }
   };
 
+
+
+
   return (
     <div className="min-h-screen bg-[#f7f7f7]   text-slate-800 overflow-x-hidden">
       {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className=" top-0 left-0 right-0 z-50 bg-[#f7f7f7]"
-      >
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3"
-            >
-              <Image
-                src={IMAGES.APP_LOGO}
-                alt="RealFusion Logo"
-                width={95}
-                height={95}
-                onClick={handleLogoClick}
-                style={{ height: "120px", width: "auto" }}
-              />
-            </motion.div>
-            <div className="hidden md:flex items-center space-x-8">
-              <div
-                className="relative group"
-                onMouseEnter={() => {
-                  if (closeTimeoutRef.current) {
-                    clearTimeout(closeTimeoutRef.current);
-                    closeTimeoutRef.current = null;
-                  }
-                  setIsServicesOpen(true);
-                }}
-                onMouseLeave={() => {
-                  closeTimeoutRef.current = setTimeout(() => {
-                    setIsServicesOpen(false);
-                  }, 200);
-                }}
-              >
-                <button className="relative px-4 py-2 text-black-800 text-semibold hover:text-slate-800 transition-all duration-300 outline-none cursor-pointer flex items-center gap-1">
-                  Services
-                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-400 group-hover:w-full"></span>
-                </button>
-
-                <AnimatePresence>
-                  {isServicesOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full pt-2 w-48 z-50"
-                    >
-                      <div className="bg-white rounded-md shadow-lg border border-slate-100 py-2">
-                        <button
-                          onClick={() => {
-                            setIsServicesOpen(false);
-                            setIsModalOpen(true);
-                          }}
-                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                        >
-                          Newsletter
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsServicesOpen(false);
-                            router.push("/investment-selector");
-                          }}
-                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                        >
-                          Property selection
-                        </button>
-                        {/* <button
-                          onClick={() => {
-                            setIsServicesOpen(false);
-                            router.push(RouteConfig.QUESTIONNAIRE);
-                          }}
-                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                        >
-                          Questionnaire
-                        </button> */}
-                        <button
-                          onClick={() => {
-                            setIsServicesOpen(false);
-                            handleContactNavigation();
-                          }}
-                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                        >
-                          Consulting services
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {[
-                { id: "about", label: "About Us" },
-                { id: "ai", label: "The Power of AI" },
-                { id: "contact", label: "Contact Us" },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="relative group px-4 py-2 text-black-800 text-semibold  hover:text-slate-800 transition-all duration-300"
-                >
-                  {item.label}
-
-                  {/* Underline animation */}
-                  <span
-                    className={`absolute left-0 bottom-0 h-[2px] bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-400
-                   ${activeSection === item.id
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
-                      }`}
-                  ></span>
-                </button>
-              ))}
-            </div>
-
-            <div className="flex gap-2">
-              <AuthButton
-                onOpenLogin={() => {
-                  setIsModalOpen(true);
-                }}
-              />
-              {userDetail && <LogoutButton />}
-            </div>
-          </div>
-        </div>
-      </motion.nav>
+       <Navbar 
+        activeSection={activeSection}
+        onOpenLogin={() => setIsModalOpen(true)}
+        userDetail={userDetail}
+      />
 
       {/*Hero   */}
       <section
@@ -676,35 +559,7 @@ export default function RealFusionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-4 bg-[#f7f7f7]">
-        <div className="max-w-8xl px-2 mx-auto text-center bg-[#f7f7f7]">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-8"
-          >
-            <div className="text-3xl font-bold bg-gradient-to-r from-[#017BFC] to-[#40D3B6] bg-clip-text text-transparent mb-4">
-              RealFusion
-            </div>
-            <p className="text-[#5E807F] max-w-2xl mx-auto">
-              Revolutionizing real estate investment in Dubai through the
-              perfect fusion of AI technology and human expertise.
-            </p>
-          </motion.div>
-
-          <div className="text-slate-400 text-sm">
-            © 2025 RealFusion. All rights reserved.
-          </div>
-          <div className="text-sm">
-            Disclaimer
-          </div>
-          <div className="text-xs text-slate-400">
-            This newsletter is provided for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice. RealFusion Analytics is not a licensed financial advisor, broker, or investment firm. Any information, opinions, or recommendations expressed herein are general in nature and should not be relied upon for making investment decisions. Real estate markets, including Dubai, involve risks, and past performance is not indicative of future results. Readers are strongly encouraged to conduct their own independent research and consult with qualified financial, legal, and tax advisors before making any investment decisions. RealFusion Analytics assumes no liability for any loss or damage resulting from reliance on the information provided in this newsletter.
-          </div>
-        </div>
-      </footer>
+      <Footer/>
 
       <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
