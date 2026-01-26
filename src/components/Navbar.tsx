@@ -51,17 +51,37 @@ const Navbar = ({ activeSection = "hero", onOpenLogin, userDetail }: NavbarProps
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMobileMenuOpen]);
 
+  // const scrollToSection = (sectionId: string) => {
+  //   if (pathname !== RouteConfig.HOME) {
+  //     router.push(`${RouteConfig.HOME}#${sectionId}`);
+  //   } else {
+  //     const element = document.getElementById(sectionId);
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   }
+  //   setIsMobileMenuOpen(false);
+  // };
+
   const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+
+    const doScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
     if (pathname !== RouteConfig.HOME) {
       router.push(`${RouteConfig.HOME}#${sectionId}`);
     } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      // wait for mobile menu close animation
+      setTimeout(doScroll, 350);
     }
-    setIsMobileMenuOpen(false);
   };
+
 
   const handleLogoClick = () => {
     router.push(RouteConfig.HOME);

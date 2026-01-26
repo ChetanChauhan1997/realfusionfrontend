@@ -29,7 +29,7 @@ import AuthButton from "@/components/AuthButton";
 import LogoutButton from "@/components/LogoutButton";
 import ContactUsForm from "@/components/home/contactus";
 import { RouteConfig } from "@/utils/RouteConfig";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -156,7 +156,7 @@ export default function RealFusionPage() {
   return (
     <div className="min-h-screen bg-[#f7f7f7]   text-slate-800 overflow-x-hidden">
       {/* Navigation */}
-       <Navbar 
+      <Navbar
         activeSection={activeSection}
         onOpenLogin={() => setIsModalOpen(true)}
         userDetail={userDetail}
@@ -559,7 +559,7 @@ export default function RealFusionPage() {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
 
       <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
